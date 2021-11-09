@@ -41,7 +41,7 @@ function game() {
 
     while (x < 5) {
         let result = playRound(humanPlay(), computerPlay());
-        (result.charAt(4) == " ") ? ++gamesTied : (result.charAt(4) == "w") ? ++gamesWon : ++ gamesLost;
+        (result == "It's a tie!") ? ++gamesTied : (result.slice(0, 8) == "You win!") ? ++gamesWon : ++ gamesLost;
         console.log(`Wins: ${gamesWon} \nLosses: ${gamesLost} \nTies: ${gamesTied}`);
         alert(result);
         ++x;
